@@ -1,5 +1,7 @@
 package co.edu.unbosque.controller;
 
+import javax.swing.JFileChooser;
+
 import co.edu.unbosque.model.LecturaArchivo;
 
 public class Controller {
