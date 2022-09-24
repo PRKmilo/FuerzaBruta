@@ -1,8 +1,11 @@
 package co.edu.unbosque.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
+
 
 public class Model {
 
@@ -75,7 +78,36 @@ public class Model {
 
 
 	public void boyerMoore(String text , String patron) {
+		int count =0;
+		int pos=count+(patron.length()-1);
+		char[] chars = patron.toCharArray();
+		char[] text1 = text.toCharArray();
+		HashMap<Character, Integer>  mapa=patron(patron);
 		
+		
+		ArrayList<Integer> lista=new ArrayList<Integer>();
+		
+		while(pos <= (text1.length-1)) {
+			int sum=0;
+			int inercount=0;
+			int l=patron.length()-1;
+			int j=pos;
+			while(l>=0 && (text1[j] == chars[l])) {
+				inercount++;
+				l--;
+				j--;
+			}
+			if(inercount != patron.length()) {
+				sum =(mapa.get(text1[j]) == null)? patron.length(): mapa.get(text1[j]); 
+			}else {
+				
+				sum = patron.length();
+				System.out.println("esta es la pos");
+				System.out.println(j+1);
+				lista.add(j+1);
+			}
+			pos=pos+sum;
+		}
 		
 		
 		

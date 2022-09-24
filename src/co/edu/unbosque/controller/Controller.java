@@ -13,6 +13,11 @@ public class Controller {
 		leer=new LecturaArchivo();
 	    model=new Model();
 	    funcionar();
+	    System.out.println(model.patron("test"));
+	    String patron="is";
+	    String textt="this isa testis";
+	    
+	    model.boyerMoore(textt, patron);
 		
 		
 	}
