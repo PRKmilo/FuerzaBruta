@@ -1,15 +1,16 @@
 package co.edu.unbosque.controller;
 
-import javax.swing.JFileChooser;
-
-import co.edu.unbosque.model.LecturaArchivo;
+import co.edu.unbosque.view.View;
 
 public class Controller {
-	private LecturaArchivo leer;
+	// private LecturaArchivo leer;
+	private View gui;
 	public Controller() {
-		leer=new LecturaArchivo();
+		// leer=new LecturaArchivo();
+		gui = new View(this);
+		gui.setVisible(true);
 		
-		System.out.println(leer.Leer("C:\\Users\\jpiza\\eclipse-workspace\\PatronesTxt\\src\\co\\edu\\unbosque\\model\\Archivo2.txt"));
+		// System.out.println(leer.Leer("C:\\Users\\jpiza\\eclipse-workspace\\PatronesTxt\\src\\co\\edu\\unbosque\\model\\Archivo2.txt"));
 	}
 
 }
