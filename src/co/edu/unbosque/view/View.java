@@ -12,10 +12,11 @@ public class View extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Inicio inicio;
 	private ImagenPrincipal img;
+	private Algoritmo alg;
 
 	public View(Controller c) {
 		img = new ImagenPrincipal();
-		setSize(500, 500);
+		setSize(500, 400);
 		setContentPane(img);
 		setResizable(false);
 		setVisible(true);
@@ -25,11 +26,29 @@ public class View extends JFrame {
 		setLocationRelativeTo(null);
 
 		inicio = new Inicio(c);
-		inicio.setBounds(0, 0, 500, 500);
+		inicio.setSize(500, 400);
 		getContentPane().add(inicio);
+
+		alg = new Algoritmo(c);
+		alg.setSize(700, 500);
+		getContentPane().add(alg);
+
+		alg.getBsearch().addActionListener(c);
+		alg.getBvolver().addActionListener(c);
+
+		inicio.updateUI();
+		alg.updateUI();
 	}
 
 
+
+	public Algoritmo getAlg() {
+		return alg;
+	}
+
+	public void setAlg(Algoritmo alg) {
+		this.alg = alg;
+	}
 
 	public Inicio getInicio() {
 		return inicio;
