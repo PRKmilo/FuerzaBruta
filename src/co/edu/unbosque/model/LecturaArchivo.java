@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 
 public class LecturaArchivo {
 	
-	public String Leer(String direccion) {
+	public String Leer() {
 		String texto="";
 		JFileChooser jf=new JFileChooser();
 		jf.showOpenDialog(null);
@@ -16,7 +16,7 @@ public class LecturaArchivo {
 			String temp="";
 			String bfRead;
 			while((bfRead = bf.readLine()) != null) {
-				temp= temp+bfRead;
+				temp= temp+bfRead+"\n";
 			}
 			
 			texto=temp;

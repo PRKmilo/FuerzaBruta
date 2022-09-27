@@ -10,19 +10,20 @@ import java.util.Map.Entry;
 public class Model {
 
 
-	public void kmp(String text, String patron) {
-
+	public ArrayList<Integer> kmp(String text, String patron) {
+        ArrayList <Integer> p =new   ArrayList <Integer>();
 		int cont = 0;
 		if (patron == null || patron.length() == 0) {
 			System.out.println("The pattern occurs with shift 0");
+			p.add(0);
 			cont++;
-			return;
+			
 		}
 
 		if (text == null || patron.length() > text.length()) {
 			System.out.println("Pattern not found");
 			System.out.println("cont " + cont);
-			return;
+		
 		}
 
 		char[] chars = patron.toCharArray();
@@ -44,6 +45,8 @@ public class Model {
 			if (j < patron.length() && text.charAt(i) == patron.charAt(j)) {
 				if (++j == patron.length()) {
 					System.out.println("The pattern occurs with shift " + (i - j + 1));
+					
+					p.add(i-j+1);
 					cont++;
 				}
 			} else if (j > 0) {
@@ -53,6 +56,9 @@ public class Model {
 		}
 
 		System.out.println("cont es " + cont);
+		
+		return p;
+
 	}
 
 	public HashMap<Character, Integer> patron(String patron) {
@@ -77,7 +83,7 @@ public class Model {
 	}
 
 
-	public void boyerMoore(String text , String patron) {
+	public ArrayList<Integer> boyerMoore(String text , String patron) {
 		int count =0;
 		int pos=count+(patron.length()-1);
 		char[] chars = patron.toCharArray();
@@ -108,12 +114,11 @@ public class Model {
 			}
 			pos=pos+sum;
 		}
-		
+		return lista;
 		
 		
 
 	}
-
 
 
 }

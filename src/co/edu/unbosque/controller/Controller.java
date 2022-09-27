@@ -1,38 +1,138 @@
 package co.edu.unbosque.controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import javax.swing.JFileChooser;
+import javax.swing.JTextArea;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Highlighter;
+
+import co.edu.unbosque.view.View;
 import co.edu.unbosque.model.LecturaArchivo;
 import co.edu.unbosque.model.Model;
 
-public class Controller {
+public class Controller implements ActionListener {
 	private LecturaArchivo leer;
 	private Model model;
-	
+	private View gui;
+	private String buscar = "";
+
 	public Controller() {
-		leer=new LecturaArchivo();
-	    model=new Model();
-	    funcionar();
-	    System.out.println(model.patron("test"));
-	    String patron="is";
-	    String textt="this isa testis";
-	    
-	    model.boyerMoore(textt, patron);
+		gui = new View(this);
+		gui.setVisible(true);
+
+		leer = new LecturaArchivo();
+		model = new Model();
+
 		
+
 		
 	}
 
-	private void funcionar() {
-		String cuento="Una mañana, Mamá Osa sirvió la más deliciosa avena para el desayuno, pero como estaba demasiado caliente para comer, los tres osos decidieron ir de paseo por el bosque mientras se enfriaba. Al cabo de unos minutos, una niña llamada Ricitos de Oro llegó a la casa de los osos y tocó la puerta. Al no encontrar respuesta, abrió la puerta y entró en la casa sin permiso.\r\n"
-				+ "\r\n"
-				+ "En la cocina había una mesa con tres tazas de avena: una grande, una mediana y una pequeña. Ricitos de Oro tenía un gran apetito y la avena se veía deliciosa. Primero, probó la avena de la taza grande, pero la avena estaba muy fría y no le gustó. Luego, probó la avena de la taza mediana, pero la avena estaba muy caliente y tampoco le gustó. Por último, probó la avena de la taza pequeña y esta vez la avena no estaba ni fría ni caliente, ¡estaba perfecta! La avena estaba tan deliciosa que se la comió toda sin dejar ni un poquito.";
-       
-		model.kmp(cuento, "O");
-		
+	public void buscarpalabra1(JTextArea area1, String patron) {
 
+		ArrayList<Integer> p2 = model.kmp(area1.getText(), patron);
+		if (patron.length() >= 1) {
+			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
+					Color.GREEN);
+			Highlighter h = area1.getHighlighter();
+			h.removeAllHighlights();
+			String text = area1.getText();
+			String caracteres = patron;
+			Pattern p = Pattern.compile("(?i)" + caracteres);
+			Matcher m = p.matcher(text);
+			for (int i = 0; i < p2.size(); i++) {
+				try {
+					h.addHighlight(p2.get(i), p2.get(i) + patron.length(), highlightPainter);
+				} catch (BadLocationException e) {
+
+					e.printStackTrace();
+				}
+			}
+
+		}
 	}
-	
-	
+
+	public void buscarpalabra(JTextArea area1, String patron) {
+
+		ArrayList<Integer> p2 = model.boyerMoore(area1.getText(), patron);
+		if (patron.length() >= 1) {
+			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
+					Color.GREEN);
+			Highlighter h = area1.getHighlighter();
+			h.removeAllHighlights();
+			String text = area1.getText();
+			String caracteres = patron;
+			Pattern p = Pattern.compile("(?i)" + caracteres);
+			Matcher m = p.matcher(text);
+			for (int i = 0; i < p2.size(); i++) {
+				try {
+					h.addHighlight(p2.get(i), p2.get(i) + patron.length(), highlightPainter);
+				} catch (BadLocationException e) {
+
+					e.printStackTrace();
+				}
+			}
+
+		}
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().equals(gui.getInicio().alkmp)) {
+			gui.getAlg().setVisible(true);
+			gui.getInicio().setVisible(false);
+			gui.setSize(700, 500);
+
+		}
+
+		if (e.getActionCommand().equals(gui.getInicio().albm)) {
+			gui.getAlg2().setVisible(true);
+			gui.getInicio().setVisible(false);
+			gui.setSize(700, 500);
+
+		}
+
+		if (e.getActionCommand().equals(gui.getAlg().VOLVER)) {
+
+			gui.getAlg().setVisible(false);
+			gui.getInicio().setVisible(true);
+
+			gui.setSize(500, 400);
+		}
+		
+		
+		
+		if (e.getActionCommand().equals(gui.getAlg().Subir)) {
+			gui.getAlg().getMostrar().append(leer.Leer());
+
+		}
+		if (e.getActionCommand().equals(gui.getAlg().Buscar)) {
+
+			buscarpalabra1(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText());
+
+		}
+		if (e.getActionCommand().equals(gui.getAlg2().VOLVER2)) {
+
+			gui.getAlg2().setVisible(false);
+			gui.getInicio().setVisible(true);
+
+			gui.setSize(500, 400);
+		}
+		if (e.getActionCommand().equals(gui.getAlg2().Subir2)) {
+			gui.getAlg2().getMostrar1().append(leer.Leer());
+
+		}
+		if (e.getActionCommand().equals(gui.getAlg2().Buscar2)) {
+
+			buscarpalabra(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText());
+
+		}
+	}
 
 }

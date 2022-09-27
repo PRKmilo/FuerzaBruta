@@ -24,10 +24,13 @@ public class Algoritmo extends JPanel {
 	private JScrollPane archivo;
 	private JButton bsearch;
 	private JButton bvolver;
+	private JButton bsubir;
 	private JLabel numrep;
 	private String norep = "";
 	private static final String FUENTE = "Verdana";
+	public static final String Subir = "Subir  Archivo";
 	public static final String VOLVER = "Volver";
+	public static final String Buscar = "Buscar";
 
 	public Algoritmo(Controller c) {
 		setVisible(false);
@@ -39,7 +42,7 @@ public class Algoritmo extends JPanel {
 		numrep.setForeground(Color.WHITE);
 		numrep.setBounds(350, 250, 80, 20);
 
-		bsearch = new JButton("BUSCAR");
+		bsearch = new JButton(Buscar);
 		bsearch.setFont(new Font(FUENTE, Font.BOLD, 13));
 		bsearch.setBounds(20, 20, 100, 20);
 
@@ -55,12 +58,18 @@ public class Algoritmo extends JPanel {
 		bvolver = new JButton(VOLVER);
 		bvolver.setFont(new Font(FUENTE, Font.BOLD, 12));
 		bvolver.setBounds(420, 410, 100, 20);
+		
+		bsubir = new JButton(Subir);
+		bsubir.setFont(new Font(FUENTE, Font.BOLD, 12));
+		bsubir.setBounds(420, 380, 180, 20);
 
 		add(buscar);
 		add(bvolver);
 		add(archivo);
 		add(bsearch);
+		add(bsubir);
 		add(numrep);
+		
 
 
 	}
@@ -87,6 +96,30 @@ public class Algoritmo extends JPanel {
 
 	public void setNorep(String norep) {
 		this.norep = norep;
+	}
+
+	public JButton getBsubir() {
+		return bsubir;
+	}
+
+	public void setBsubir(JButton bsubir) {
+		this.bsubir = bsubir;
+	}
+
+	public JTextArea getMostrar() {
+		return mostrar;
+	}
+
+	public void setMostrar(JTextArea mostrar) {
+		this.mostrar = mostrar;
+	}
+
+	public JTextField getBuscar() {
+		return buscar;
+	}
+
+	public void setBuscar(JTextField buscar) {
+		this.buscar = buscar;
 	}
 
 
