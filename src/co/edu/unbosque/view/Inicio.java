@@ -16,7 +16,9 @@ public class Inicio extends JPanel {
 	private JButton kmp;
 	private JLabel titulo;
 	private JLabel integrantes;
-	private static final String FUENTE = "Verdana";
+	public static final String FUENTE = "Verdana";
+	public static final String alkmp = "Kmp";
+	public static final String albm = "Boyer-Moore";
 
 	public Inicio(Controller c) {
 		setVisible(true);
@@ -36,13 +38,13 @@ public class Inicio extends JPanel {
 		integrantes.setBounds(20, 200, 500, 150);
 		add(integrantes);
 
-		bm = new JButton("Boyer-Moore");
+		bm = new JButton(alkmp);
 		bm.setOpaque(false);
 		bm.setBounds(180, 150, 140, 20);
 		bm.setFont(new Font(FUENTE, Font.BOLD, 14));
 		add(bm);
 
-		kmp = new JButton("Kmp");
+		kmp = new JButton(albm);
 		kmp.setBounds(180, 180, 140, 20);
 		kmp.setFont(new Font(FUENTE, Font.BOLD, 14));
 		add(kmp);

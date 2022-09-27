@@ -36,6 +36,9 @@ public class View extends JFrame {
 		alg.getBsearch().addActionListener(c);
 		alg.getBvolver().addActionListener(c);
 
+		inicio.getBm().addActionListener(c);
+		inicio.getKmp().addActionListener(c);
+
 		inicio.updateUI();
 		alg.updateUI();
 	}
