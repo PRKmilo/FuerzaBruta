@@ -15,6 +15,11 @@ public class View extends JFrame {
 	private Algoritmo alg;
 	private AlgoritmoBm alg2;
 	
+	/**
+	 * Se instancian los diferentes componentes para nustra interface
+	 * y se les pasa un action listenr a nustros botones.
+	 * @param c
+	 */
 	public View(Controller c) {
 	
 		img = new ImagenPrincipal();

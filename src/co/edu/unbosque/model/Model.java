@@ -9,7 +9,15 @@ import java.util.Map.Entry;
 
 public class Model {
 
-
+	/**
+	 * En la funcion de abajo obtenemos un texto y una palabra
+	 * comparamos la primera pocicion creamos un array para
+	 * guardar coincidencias y comparamos asi trasladandonos un espacio 
+	 * a la derecha.
+	 * @param text
+	 * @param patron
+	 * @return
+	 */
 	public ArrayList<Integer> kmp(String text, String patron) {
         ArrayList <Integer> p =new   ArrayList <Integer>();
 		int cont = 0;
@@ -56,7 +64,12 @@ public class Model {
 		return p;
 
 	}
-
+	/**
+	 * Aqui creamos nustro diccionario de acuerdo a los patrones 
+	 * enconstrados en el mismo patron para el texto
+	 * @param patron
+	 * @return
+	 */
 	public HashMap<Character, Integer> patron(String patron) {
 
 		String p="*";
@@ -78,7 +91,15 @@ public class Model {
 		return guardar;
 	}
 
-
+/**
+ * En el metodo de abajo recibimos un texto y una palabra o 
+ * patron y comparamos el texto desde la poscision de el tamaño
+ * de la palabra y verificamos hacia atra si no coincide buscamos en el 
+ * diccionario y el valor que nos bote seran las pocisiones a trasladarnos.
+ * @param text
+ * @param patron
+ * @return
+ */
 	public ArrayList<Integer> boyerMoore(String text , String patron) {
 		int count =0;
 		int pos=count+(patron.length()-1);

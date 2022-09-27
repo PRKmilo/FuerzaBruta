@@ -6,7 +6,10 @@ import java.io.FileReader;
 import javax.swing.JFileChooser;
 
 public class LecturaArchivo {
-	
+	/**
+	 * Se busca el archivo escogido y se lee el txt.
+	 * @return
+	 */
 	public String Leer() {
 		String texto="";
 		JFileChooser jf=new JFileChooser();
