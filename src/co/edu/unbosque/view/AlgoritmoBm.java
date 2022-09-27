@@ -28,9 +28,9 @@ public class AlgoritmoBm extends JPanel {
 	private JLabel numrep1;
 	private String norep = "";
 	private static final String FUENTE = "Verdana";
-	public static final String Subir2 = "Subir  Archivo";
-	public static final String VOLVER2 = "Volver";
-	public static final String Buscar2 = "Buscar";
+	public static final String Subir2 = "Subir2  Archivo";
+	public static final String VOLVER2 = "Volver2";
+	public static final String Buscar2 = "Buscar2";
 
 	public AlgoritmoBm(Controller c) {
 		setVisible(false);

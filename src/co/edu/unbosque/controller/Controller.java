@@ -34,6 +34,8 @@ public class Controller implements ActionListener {
 
 		
 	}
+	
+
 
 	public void buscarpalabra1(JTextArea area1, String patron) {
 
@@ -98,7 +100,7 @@ public class Controller implements ActionListener {
 
 		}
 
-		if (e.getActionCommand().equals(gui.getAlg().VOLVER)) {
+		if (e.getActionCommand()==gui.getAlg().VOLVER) {
 
 			gui.getAlg().setVisible(false);
 			gui.getInicio().setVisible(true);
@@ -108,31 +110,39 @@ public class Controller implements ActionListener {
 		
 		
 		
-		if (e.getActionCommand().equals(gui.getAlg().Subir)) {
+		if (e.getActionCommand()==gui.getAlg().Subir) {
 			gui.getAlg().getMostrar().append(leer.Leer());
 
 		}
-		if (e.getActionCommand().equals(gui.getAlg().Buscar)) {
+		if (e.getActionCommand()==gui.getAlg().Buscar) {
 
 			buscarpalabra1(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText());
 
 		}
-		if (e.getActionCommand().equals(gui.getAlg2().VOLVER2)) {
+		
+		
+		
+		
+		if (e.getActionCommand()==gui.getAlg2().VOLVER2) {
 
 			gui.getAlg2().setVisible(false);
 			gui.getInicio().setVisible(true);
 
 			gui.setSize(500, 400);
 		}
-		if (e.getActionCommand().equals(gui.getAlg2().Subir2)) {
+		
+		
+		
+		if (e.getActionCommand()==gui.getAlg2().Subir2) {
 			gui.getAlg2().getMostrar1().append(leer.Leer());
 
 		}
-		if (e.getActionCommand().equals(gui.getAlg2().Buscar2)) {
+		if (e.getActionCommand()==gui.getAlg2().Buscar2) {
 
 			buscarpalabra(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText());
 
 		}
+		
 	}
 
 }
