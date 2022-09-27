@@ -17,11 +17,23 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(gui.getInicio().alkmp)) {
 			gui.getAlg().setVisible(true);
+			gui.getInicio().setVisible(false);
+			gui.setSize(700, 500);
 		}
 		
 		if(e.getActionCommand().equals(gui.getInicio().albm)) {
 			gui.getAlg().setVisible(true);
+			gui.getInicio().setVisible(false);
+			gui.setSize(700, 500);
+
 		}
+
+		if (e.getActionCommand().equals(gui.getAlg().VOLVER)) {
+			gui.getAlg().setVisible(false);
+			gui.getInicio().setVisible(true);
+			gui.setSize(500, 400);
+		}
+
 	}
 
 }

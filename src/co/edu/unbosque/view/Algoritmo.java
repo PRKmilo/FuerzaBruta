@@ -27,6 +27,7 @@ public class Algoritmo extends JPanel {
 	private JLabel numrep;
 	private String norep = "";
 	private static final String FUENTE = "Verdana";
+	public static final String VOLVER = "Volver";
 
 	public Algoritmo(Controller c) {
 		setVisible(false);
@@ -51,7 +52,7 @@ public class Algoritmo extends JPanel {
 		archivo.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		archivo.setBounds(20, 65, 320, 380);
 		
-		bvolver = new JButton("VOLVER");
+		bvolver = new JButton(VOLVER);
 		bvolver.setFont(new Font(FUENTE, Font.BOLD, 12));
 		bvolver.setBounds(420, 410, 100, 20);
 
