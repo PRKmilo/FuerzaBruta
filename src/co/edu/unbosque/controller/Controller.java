@@ -33,7 +33,15 @@ public class Controller implements ActionListener {
 		model = new Model();
 
 	}
-
+	/**
+	 * En este metodo recreamos el algoritmos de kmp en donde 
+	 * se busca un patron en un texto  .
+	 * Nostros en este metodo lo que hacemos es arastrarno una pocision en el
+	 * teto hasta encontrar la palabra dentro del texto devolver posiciones y 
+	 * resaltar
+	 * @param area1
+	 * @param patron
+	 */
 	public void buscarpalabraKMP(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.kmp(area1.getText(), patron);
@@ -59,7 +67,13 @@ public class Controller implements ActionListener {
 		gui.getAlg().getNumrep().setText("Total KMP: "+ p2.size());
 		}
 	}
-
+/**
+ * Lo que hacemos en este metodo es recrear el algoritmo de booyer moore 
+ * en donde lo que hacemos en la parte de abajo es obtener las pocisiones 
+ * y subrayar.
+ * @param area1
+ * @param patron
+ */
 	public void buscarpalabraBM(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.boyerMoore(area1.getText(), patron);
