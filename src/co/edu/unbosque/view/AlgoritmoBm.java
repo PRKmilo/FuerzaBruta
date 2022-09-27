@@ -32,6 +32,11 @@ public class AlgoritmoBm extends JPanel {
 	public static final String VOLVER2 = "VolverI";
 	public static final String Buscar2 = "BuscarBm";
 
+	/**
+	 * Se instancian nustros componentes para nuestra
+	 * ventana de algoritmo booyer moore.
+	 * @param c
+	 */
 	public AlgoritmoBm(Controller c) {
 		setVisible(false);
 		setOpaque(false);
