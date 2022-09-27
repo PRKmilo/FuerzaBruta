@@ -13,6 +13,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
+import co.edu.unbosque.view.Ventana;
 import co.edu.unbosque.view.View;
 import co.edu.unbosque.model.LecturaArchivo;
 import co.edu.unbosque.model.Model;
@@ -21,23 +22,19 @@ public class Controller implements ActionListener {
 	private LecturaArchivo leer;
 	private Model model;
 	private View gui;
+	private Ventana v;
 	private String buscar = "";
 
 	public Controller() {
 		gui = new View(this);
 		gui.setVisible(true);
-
+		v = new Ventana();
 		leer = new LecturaArchivo();
 		model = new Model();
 
-		
-
-		
 	}
-	
 
-
-	public void buscarpalabra1(JTextArea area1, String patron) {
+	public void buscarpalabraKMP(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.kmp(area1.getText(), patron);
 		if (patron.length() >= 1) {
@@ -52,16 +49,18 @@ public class Controller implements ActionListener {
 			for (int i = 0; i < p2.size(); i++) {
 				try {
 					h.addHighlight(p2.get(i), p2.get(i) + patron.length(), highlightPainter);
+				
 				} catch (BadLocationException e) {
 
 					e.printStackTrace();
 				}
 			}
-
+	
+		gui.getAlg().getNumrep().setText("Total KMP: "+ p2.size());
 		}
 	}
 
-	public void buscarpalabra(JTextArea area1, String patron) {
+	public void buscarpalabraBM(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.boyerMoore(area1.getText(), patron);
 		if (patron.length() >= 1) {
@@ -76,12 +75,14 @@ public class Controller implements ActionListener {
 			for (int i = 0; i < p2.size(); i++) {
 				try {
 					h.addHighlight(p2.get(i), p2.get(i) + patron.length(), highlightPainter);
+				
 				} catch (BadLocationException e) {
 
 					e.printStackTrace();
 				}
 			}
-
+			gui.getAlg2().getNumero1().setText("Total BM: "+ p2.size());
+		
 		}
 	}
 
@@ -100,49 +101,74 @@ public class Controller implements ActionListener {
 
 		}
 
-		if (e.getActionCommand()==gui.getAlg().VOLVER) {
+		if (e.getActionCommand() == gui.getAlg().VOLVER) {
 
 			gui.getAlg().setVisible(false);
 			gui.getInicio().setVisible(true);
 
 			gui.setSize(500, 400);
+			
+			gui.getAlg().getMostrar().selectAll();
+			gui.getAlg().getMostrar().replaceSelection("");
+			gui.getAlg().getBuscar().setText("");
+			gui.getAlg().getNumrep().setText("");
 		}
-		
-		
-		
-		if (e.getActionCommand()==gui.getAlg().Subir) {
-			gui.getAlg().getMostrar().append(leer.Leer());
+
+		if (e.getActionCommand() == gui.getAlg().Subir) {
+          
+			if (!gui.getAlg().getMostrar().getText().isEmpty()) {
+
+				v.mostrarmensaje("Ya subiste el archivo");
+			} else {
+				gui.getAlg().getMostrar().append(leer.Leer());
+
+			}
+		}
+		if (e.getActionCommand() == gui.getAlg().Buscar) {
+			if (gui.getAlg().getMostrar().getText().isEmpty() 
+					|| gui.getAlg().getBuscar().getText().isEmpty()) {
+				v.mostrarmensaje("Debes subir el archivo o poner un patron");
+			} else {
+				buscarpalabraKMP(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText());
+				
+			}
 
 		}
-		if (e.getActionCommand()==gui.getAlg().Buscar) {
 
-			buscarpalabra1(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText());
-
-		}
-		
-		
-		
-		
-		if (e.getActionCommand()==gui.getAlg2().VOLVER2) {
+		if (e.getActionCommand() == gui.getAlg2().VOLVER2) {
 
 			gui.getAlg2().setVisible(false);
 			gui.getInicio().setVisible(true);
 
 			gui.setSize(500, 400);
+			gui.getAlg2().getMostrar1().selectAll();
+			gui.getAlg2().getMostrar1().replaceSelection("");
+			gui.getAlg2().getBuscar1().setText("");
+			gui.getAlg2().getNumero1().setText("");
 		}
-		
-		
-		
-		if (e.getActionCommand()==gui.getAlg2().Subir2) {
-			gui.getAlg2().getMostrar1().append(leer.Leer());
+
+		if (e.getActionCommand() == gui.getAlg2().Subir2) {
+
+			if (!gui.getAlg2().getMostrar1().getText().isEmpty()) {
+
+				v.mostrarmensaje("Ya subiste el archivo");
+			} else {
+				gui.getAlg2().getMostrar1().append(leer.Leer());
+
+			}
+		}
+		if (e.getActionCommand() == gui.getAlg2().Buscar2) {
+			if (gui.getAlg2().getMostrar1().getText().isEmpty() 
+					|| gui.getAlg2().getBuscar1().getText().isEmpty()) {
+				v.mostrarmensaje("Debes subir el archivo o poner un patron");
+			} else {
+				buscarpalabraBM(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText());
+				
+			}
 
 		}
-		if (e.getActionCommand()==gui.getAlg2().Buscar2) {
 
-			buscarpalabra(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText());
 
-		}
-		
 	}
 
 }

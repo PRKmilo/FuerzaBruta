@@ -25,30 +25,30 @@ public class AlgoritmoBm extends JPanel {
 	private JButton bsearch1;
 	private JButton bvolver1;
 	private JButton bsubir1;
-	private JLabel numrep1;
-	private String norep = "";
+	private JLabel numero1;
+	
 	private static final String FUENTE = "Verdana";
-	public static final String Subir2 = "Subir2  Archivo";
-	public static final String VOLVER2 = "Volver2";
-	public static final String Buscar2 = "Buscar2";
+	public static final String Subir2 = "SubirBm";
+	public static final String VOLVER2 = "VolverI";
+	public static final String Buscar2 = "BuscarBm";
 
 	public AlgoritmoBm(Controller c) {
 		setVisible(false);
 		setOpaque(false);
 		setLayout(null);
 
-		numrep1 = new JLabel("Total:" + norep);
-		numrep1.setFont(new Font(FUENTE, Font.BOLD, 15));
-		numrep1.setForeground(Color.WHITE);
-		numrep1.setBounds(350, 250, 80, 20);
+		numero1 = new JLabel();
+		numero1.setFont(new Font(FUENTE, Font.BOLD, 15));
+		numero1.setForeground(Color.WHITE);
+		numero1.setBounds(350, 250, 150, 20);
 
 		bsearch1 = new JButton(Buscar2);
 		bsearch1.setFont(new Font(FUENTE, Font.BOLD, 13));
-		bsearch1.setBounds(20, 20, 100, 20);
+		bsearch1.setBounds(20, 20, 140, 20);
 
 		buscar1 = new JTextField();
 		buscar1.setFont(new Font(FUENTE, Font.BOLD, 10));
-		buscar1.setBounds(140, 18, 500, 20);
+		buscar1.setBounds(200, 18, 400, 20);
 
 		mostrar1 = new JTextArea();
 		archivo1 = new JScrollPane(mostrar1);
@@ -68,7 +68,7 @@ public class AlgoritmoBm extends JPanel {
 		add(archivo1);
 		add(bsearch1);
 		add(bsubir1);
-		add(numrep1);
+		add(numero1);
 		
 
 
@@ -122,21 +122,17 @@ public class AlgoritmoBm extends JPanel {
 		this.bsubir1 = bsubir1;
 	}
 
-	public JLabel getNumrep1() {
-		return numrep1;
+	public JLabel getNumero1() {
+		return numero1;
 	}
 
-	public void setNumrep1(JLabel numrep1) {
-		this.numrep1 = numrep1;
+	public void setNumero1(JLabel numero1) {
+		this.numero1 = numero1;
 	}
 
-	public String getNorep() {
-		return norep;
-	}
+	
 
-	public void setNorep(String norep) {
-		this.norep = norep;
-	}
+	
 
 	
 }

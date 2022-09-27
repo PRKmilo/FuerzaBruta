@@ -14,17 +14,13 @@ public class Model {
         ArrayList <Integer> p =new   ArrayList <Integer>();
 		int cont = 0;
 		if (patron == null || patron.length() == 0) {
-			System.out.println("The pattern occurs with shift 0");
+		
 			p.add(0);
 			cont++;
 			
 		}
 
-		if (text == null || patron.length() > text.length()) {
-			System.out.println("Pattern not found");
-			System.out.println("cont " + cont);
 		
-		}
 
 		char[] chars = patron.toCharArray();
 
@@ -44,7 +40,7 @@ public class Model {
 		for (int i = 0, j = 0; i < text.length(); i++) {
 			if (j < patron.length() && text.charAt(i) == patron.charAt(j)) {
 				if (++j == patron.length()) {
-					System.out.println("The pattern occurs with shift " + (i - j + 1));
+					
 					
 					p.add(i-j+1);
 					cont++;
@@ -55,7 +51,7 @@ public class Model {
 			}
 		}
 
-		System.out.println("cont es " + cont);
+		
 		
 		return p;
 
@@ -108,8 +104,7 @@ public class Model {
 			}else {
 				
 				sum = patron.length();
-				System.out.println("esta es la pos");
-				System.out.println(j+1);
+			
 				lista.add(j+1);
 			}
 			pos=pos+sum;
