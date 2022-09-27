@@ -14,7 +14,9 @@ public class View extends JFrame {
 	private ImagenPrincipal img;
 	private Algoritmo alg;
 	private AlgoritmoBm alg2;
+	
 	public View(Controller c) {
+	
 		img = new ImagenPrincipal();
 		setSize(500, 400);
 		setContentPane(img);
@@ -49,9 +51,13 @@ public class View extends JFrame {
 		inicio.getKmp().addActionListener(c);
 
 		inicio.updateUI();
+		alg2.updateUI();
 		alg.updateUI();
 	}
 
+
+
+	
 
 
 	public Algoritmo getAlg() {
