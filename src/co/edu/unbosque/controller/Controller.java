@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
-import javax.swing.JFileChooser;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import co.edu.unbosque.model.LecturaArchivo;
 import co.edu.unbosque.model.Model;
@@ -29,6 +30,7 @@ public class Controller {
        
 		model.kmp(cuento, "O");
 		
+
 	}
 	
 	
