@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"co.edu.unbosque.view","c":"ImagenPrincipal","l":"ImagenPrincipal()","u":"%3Cinit%3E()"},{"p":"co.edu.unbosque.view","c":"ImagenPrincipal","l":"paint(Graphics)","u":"paint(java.awt.Graphics)"}];updateSearchResults();
