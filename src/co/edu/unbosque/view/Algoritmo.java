@@ -22,15 +22,18 @@ public class Algoritmo extends JPanel {
 	private JTextField buscar;
 	private JTextArea mostrar;
 	private JScrollPane archivo;
-	private JButton bsearch;
+	private JButton bsearchkmp;
+	private JButton bsearchmkmp;
 	private JButton bvolver;
 	private JButton bsubir;
 	private JLabel numrep;
+	private JLabel ingresarkmp;
 	
 	private static final String FUENTE = "Verdana";
-	public static final String Subir = "SubirkMP";
+	public static final String SUBIR = "Subir KMP";
 	public static final String VOLVER = "Volver";
-	public static final String Buscar = "BuscarKMP";
+	public static final String BUSCAR1 = "Buscar KMP";
+	public static final String BUSCARMA = "Buscar Mayuscula KMP";
 
 	public Algoritmo(Controller c) {
 		setVisible(false);
@@ -40,11 +43,20 @@ public class Algoritmo extends JPanel {
 		numrep = new JLabel();
 		numrep.setFont(new Font(FUENTE, Font.BOLD, 15));
 		numrep.setForeground(Color.WHITE);
-		numrep.setBounds(350, 250, 150, 20);
+		numrep.setBounds(370, 250, 150, 20);
 
-		bsearch = new JButton(Buscar);
-		bsearch.setFont(new Font(FUENTE, Font.BOLD, 13));
-		bsearch.setBounds(20, 20, 140, 20);
+		ingresarkmp = new JLabel("INGRESE EL PATRON");
+		ingresarkmp.setFont(new Font(FUENTE, Font.BOLD, 13));
+		ingresarkmp.setForeground(Color.WHITE);
+		ingresarkmp.setBounds(20, 20, 170, 20);
+
+		bsearchkmp = new JButton(BUSCAR1);
+		bsearchkmp.setFont(new Font(FUENTE, Font.BOLD, 13));
+		bsearchkmp.setBounds(370, 95, 140, 20);
+
+		bsearchmkmp = new JButton(BUSCARMA);
+		bsearchmkmp.setFont(new Font(FUENTE, Font.BOLD, 13));
+		bsearchmkmp.setBounds(370, 65, 200, 20);
 
 		buscar = new JTextField();
 		buscar.setFont(new Font(FUENTE, Font.BOLD, 10));
@@ -57,31 +69,21 @@ public class Algoritmo extends JPanel {
 		
 		bvolver = new JButton(VOLVER);
 		bvolver.setFont(new Font(FUENTE, Font.BOLD, 12));
-		bvolver.setBounds(420, 410, 100, 20);
+		bvolver.setBounds(370, 425, 100, 20);
 		
-		bsubir = new JButton(Subir);
+		bsubir = new JButton(SUBIR);
 		bsubir.setFont(new Font(FUENTE, Font.BOLD, 12));
-		bsubir.setBounds(420, 380, 180, 20);
+		bsubir.setBounds(480, 425, 130, 20);
 
 		add(buscar);
 		add(bvolver);
 		add(archivo);
-		add(bsearch);
+		add(bsearchkmp);
+		add(bsearchmkmp);
 		add(bsubir);
 		add(numrep);
-		
-
-
+		add(ingresarkmp);
 	}
-
-	public JButton getBsearch() {
-		return bsearch;
-	}
-
-	public void setBsearch(JButton bsearch) {
-		this.bsearch = bsearch;
-	}
-
 	public JButton getBvolver() {
 		return bvolver;
 	}
@@ -90,7 +92,13 @@ public class Algoritmo extends JPanel {
 		this.bvolver = bvolver;
 	}
 
+	public JLabel getIngresarkmp() {
+		return ingresarkmp;
+	}
 
+	public void setIngresarkmp(JLabel ingresarkmp) {
+		this.ingresarkmp = ingresarkmp;
+	}
 
 	public JButton getBsubir() {
 		return bsubir;
@@ -124,6 +132,20 @@ public class Algoritmo extends JPanel {
 		this.numrep = numrep;
 	}
 
+	public JButton getBsearchkmp() {
+		return bsearchkmp;
+	}
 
+	public void setBsearchkmp(JButton bsearchkmp) {
+		this.bsearchkmp = bsearchkmp;
+	}
+
+	public JButton getBsearchmkmp() {
+		return bsearchmkmp;
+	}
+
+	public void setBsearchmkmp(JButton bsearchmkmp) {
+		this.bsearchmkmp = bsearchmkmp;
+	}
 
 }

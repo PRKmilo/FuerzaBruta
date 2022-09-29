@@ -7,16 +7,15 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
-import co.edu.unbosque.view.Ventana;
-import co.edu.unbosque.view.View;
 import co.edu.unbosque.model.LecturaArchivo;
 import co.edu.unbosque.model.Model;
+import co.edu.unbosque.view.Ventana;
+import co.edu.unbosque.view.View;
 
 public class Controller implements ActionListener {
 	private LecturaArchivo leer;
@@ -87,14 +86,14 @@ public class Controller implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals(gui.getInicio().alkmp)) {
+		if (e.getActionCommand().equals(gui.getInicio().ALKMP)) {
 			gui.getAlg().setVisible(true);
 			gui.getInicio().setVisible(false);
 			gui.setSize(700, 500);
 
 		}
 
-		if (e.getActionCommand().equals(gui.getInicio().albm)) {
+		if (e.getActionCommand().equals(gui.getInicio().ALBM)) {
 			gui.getAlg2().setVisible(true);
 			gui.getInicio().setVisible(false);
 			gui.setSize(700, 500);
@@ -114,7 +113,7 @@ public class Controller implements ActionListener {
 			gui.getAlg().getNumrep().setText("");
 		}
 
-		if (e.getActionCommand() == gui.getAlg().Subir) {
+		if (e.getActionCommand() == gui.getAlg().SUBIR) {
           
 			if (!gui.getAlg().getMostrar().getText().isEmpty()) {
 
@@ -124,7 +123,7 @@ public class Controller implements ActionListener {
 
 			}
 		}
-		if (e.getActionCommand() == gui.getAlg().Buscar) {
+		if (e.getActionCommand() == gui.getAlg().BUSCAR1) {
 			if (gui.getAlg().getMostrar().getText().isEmpty() 
 					|| gui.getAlg().getBuscar().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");
@@ -147,7 +146,7 @@ public class Controller implements ActionListener {
 			gui.getAlg2().getNumero1().setText("");
 		}
 
-		if (e.getActionCommand() == gui.getAlg2().Subir2) {
+		if (e.getActionCommand() == gui.getAlg2().SUBIR2) {
 
 			if (!gui.getAlg2().getMostrar1().getText().isEmpty()) {
 
@@ -157,7 +156,7 @@ public class Controller implements ActionListener {
 
 			}
 		}
-		if (e.getActionCommand() == gui.getAlg2().Buscar2) {
+		if (e.getActionCommand() == gui.getAlg2().BUSCAR2) {
 			if (gui.getAlg2().getMostrar1().getText().isEmpty() 
 					|| gui.getAlg2().getBuscar1().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");

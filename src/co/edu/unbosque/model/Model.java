@@ -2,8 +2,6 @@ package co.edu.unbosque.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 
 
@@ -71,9 +69,6 @@ public class Model {
 				guardar.replace(patron.charAt(i), max);
 			}
 		}
-
-
-
 
 		return guardar;
 	}

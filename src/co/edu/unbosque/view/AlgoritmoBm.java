@@ -22,15 +22,18 @@ public class AlgoritmoBm extends JPanel {
 	private JTextField buscar1;
 	private JTextArea mostrar1;
 	private JScrollPane archivo1;
-	private JButton bsearch1;
+	private JButton bsearchbm;
+	private JButton bsearchmbm;
 	private JButton bvolver1;
 	private JButton bsubir1;
 	private JLabel numero1;
+	private JLabel ingresarbm;
 	
 	private static final String FUENTE = "Verdana";
-	public static final String Subir2 = "SubirBm";
+	public static final String SUBIR2 = "Subir BM";
 	public static final String VOLVER2 = "VolverI";
-	public static final String Buscar2 = "BuscarBm";
+	public static final String BUSCAR2 = "Buscar BM";
+	public static final String BUSCARMA2 = "Buscar Mayuscula BM";
 
 	public AlgoritmoBm(Controller c) {
 		setVisible(false);
@@ -40,11 +43,20 @@ public class AlgoritmoBm extends JPanel {
 		numero1 = new JLabel();
 		numero1.setFont(new Font(FUENTE, Font.BOLD, 15));
 		numero1.setForeground(Color.WHITE);
-		numero1.setBounds(350, 250, 150, 20);
+		numero1.setBounds(370, 250, 150, 20);
 
-		bsearch1 = new JButton(Buscar2);
-		bsearch1.setFont(new Font(FUENTE, Font.BOLD, 13));
-		bsearch1.setBounds(20, 20, 140, 20);
+		ingresarbm = new JLabel("INGRESE EL PATRON");
+		ingresarbm.setFont(new Font(FUENTE, Font.BOLD, 13));
+		ingresarbm.setForeground(Color.WHITE);
+		ingresarbm.setBounds(20, 20, 170, 20);
+
+		bsearchbm = new JButton(BUSCAR2);
+		bsearchbm.setFont(new Font(FUENTE, Font.BOLD, 13));
+		bsearchbm.setBounds(370, 95, 140, 20);
+
+		bsearchmbm = new JButton(BUSCARMA2);
+		bsearchmbm.setFont(new Font(FUENTE, Font.BOLD, 13));
+		bsearchmbm.setBounds(370, 65, 200, 20);
 
 		buscar1 = new JTextField();
 		buscar1.setFont(new Font(FUENTE, Font.BOLD, 10));
@@ -57,21 +69,44 @@ public class AlgoritmoBm extends JPanel {
 		
 		bvolver1 = new JButton(VOLVER2);
 		bvolver1.setFont(new Font(FUENTE, Font.BOLD, 12));
-		bvolver1.setBounds(420, 410, 100, 20);
+		bvolver1.setBounds(370, 425, 100, 20);
 		
-		bsubir1 = new JButton(Subir2);
+		bsubir1 = new JButton(SUBIR2);
 		bsubir1.setFont(new Font(FUENTE, Font.BOLD, 12));
-		bsubir1.setBounds(420, 380, 180, 20);
+		bsubir1.setBounds(480, 425, 130, 20);
 
 		add(buscar1);
 		add(bvolver1);
 		add(archivo1);
-		add(bsearch1);
+		add(bsearchbm);
+		add(bsearchmbm);
 		add(bsubir1);
 		add(numero1);
-		
+		add(ingresarbm);
+	}
 
+	public JButton getBsearchbm() {
+		return bsearchbm;
+	}
 
+	public void setBsearchbm(JButton bsearchbm) {
+		this.bsearchbm = bsearchbm;
+	}
+
+	public JButton getBsearchmbm() {
+		return bsearchmbm;
+	}
+
+	public void setBsearchmbm(JButton bsearchmbm) {
+		this.bsearchmbm = bsearchmbm;
+	}
+
+	public JLabel getIngresarbm() {
+		return ingresarbm;
+	}
+
+	public void setIngresarbm(JLabel ingresarbm) {
+		this.ingresarbm = ingresarbm;
 	}
 
 	public JTextField getBuscar1() {
@@ -96,14 +131,6 @@ public class AlgoritmoBm extends JPanel {
 
 	public void setArchivo1(JScrollPane archivo1) {
 		this.archivo1 = archivo1;
-	}
-
-	public JButton getBsearch1() {
-		return bsearch1;
-	}
-
-	public void setBsearch1(JButton bsearch1) {
-		this.bsearch1 = bsearch1;
 	}
 
 	public JButton getBvolver1() {
