@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"co.edu.unbosque.view","l":"ImagenPrincipal"}];updateSearchResults();
+typeSearchIndex = [{"p":"co.edu.unbosque.view","l":"Algoritmo"},{"l":"All Classes","u":"allclasses-index.html"}];updateSearchResults();

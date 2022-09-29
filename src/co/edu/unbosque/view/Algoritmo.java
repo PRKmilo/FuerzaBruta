@@ -32,7 +32,14 @@ public class Algoritmo extends JPanel {
 	public static final String VOLVER = "Volver";
 	public static final String Buscar = "BuscarKMP";
 
+	/**
+	 * En el metodo generamos una interface para la ventana
+	 * en donde tenemos un jtextfield y metemos los botones de 
+	 * este
+	 * @param c
+	 */
 	public Algoritmo(Controller c) {
+		
 		setVisible(false);
 		setOpaque(false);
 		setLayout(null);
