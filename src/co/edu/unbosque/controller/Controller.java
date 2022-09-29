@@ -41,6 +41,7 @@ public class Controller implements ActionListener {
 	 * @param area1
 	 * @param patron
 	 */
+
 	public void buscarpalabraKMP(JTextArea area1, String patron,boolean estado) {
 		ArrayList<Integer> p2 =new 	ArrayList<Integer>(); 
 		
@@ -48,6 +49,7 @@ public class Controller implements ActionListener {
 			if (estado==false) 
 			 p2 = model.boyerMoore(area1.getText().toUpperCase(), patron.toUpperCase());
 			
+
 		if (patron.length() >= 1) {
 			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
 					Color.GREEN);
@@ -77,6 +79,7 @@ public class Controller implements ActionListener {
  * @param area1
  * @param patron
  */
+
 	public void buscarpalabraBM(JTextArea area1, String patron,boolean estado) {
 		
 		ArrayList<Integer> p2 =new 	ArrayList<Integer>();
@@ -84,6 +87,7 @@ public class Controller implements ActionListener {
 		if (estado==false) 
 		 p2 = model.boyerMoore(area1.getText().toUpperCase(), patron.toUpperCase());
 		
+
 		if (patron.length() >= 1) {
 			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
 					Color.GREEN);
@@ -146,6 +150,7 @@ public class Controller implements ActionListener {
 			}
 		}
 		if (e.getActionCommand() == gui.getAlg().BUSCAR1) {
+
 			if (gui.getAlg().getMostrar().getText().isEmpty() 
 					|| gui.getAlg().getBuscar().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");
@@ -156,6 +161,7 @@ public class Controller implements ActionListener {
 
 		}
 		if (e.getActionCommand() == gui.getAlg().BUSCARMA) {
+
 			if (gui.getAlg().getMostrar().getText().isEmpty() 
 					|| gui.getAlg().getBuscar().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");
