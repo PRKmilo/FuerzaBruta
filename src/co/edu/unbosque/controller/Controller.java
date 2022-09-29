@@ -41,9 +41,15 @@ public class Controller implements ActionListener {
 	 * @param area1
 	 * @param patron
 	 */
-	public void buscarpalabraKMP(JTextArea area1, String patron) {
 
-		ArrayList<Integer> p2 = model.kmp(area1.getText(), patron);
+	public void buscarpalabraKMP(JTextArea area1, String patron,boolean estado) {
+		ArrayList<Integer> p2 =new 	ArrayList<Integer>(); 
+		
+		 p2 = model.boyerMoore(area1.getText(), patron);
+			if (estado==false) 
+			 p2 = model.boyerMoore(area1.getText().toUpperCase(), patron.toUpperCase());
+			
+
 		if (patron.length() >= 1) {
 			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
 					Color.GREEN);
@@ -73,9 +79,15 @@ public class Controller implements ActionListener {
  * @param area1
  * @param patron
  */
-	public void buscarpalabraBM(JTextArea area1, String patron) {
 
-		ArrayList<Integer> p2 = model.boyerMoore(area1.getText(), patron);
+	public void buscarpalabraBM(JTextArea area1, String patron,boolean estado) {
+		
+		ArrayList<Integer> p2 =new 	ArrayList<Integer>();
+		 p2 = model.boyerMoore(area1.getText(), patron);
+		if (estado==false) 
+		 p2 = model.boyerMoore(area1.getText().toUpperCase(), patron.toUpperCase());
+		
+
 		if (patron.length() >= 1) {
 			DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(
 					Color.GREEN);
@@ -84,7 +96,7 @@ public class Controller implements ActionListener {
 			String text = area1.getText();
 			String caracteres = patron;
 			Pattern p = Pattern.compile("(?i)" + caracteres);
-			Matcher m = p.matcher(text);
+		
 			for (int i = 0; i < p2.size(); i++) {
 				try {
 					h.addHighlight(p2.get(i), p2.get(i) + patron.length(), highlightPainter);
@@ -138,11 +150,23 @@ public class Controller implements ActionListener {
 			}
 		}
 		if (e.getActionCommand() == gui.getAlg().BUSCAR1) {
+
 			if (gui.getAlg().getMostrar().getText().isEmpty() 
 					|| gui.getAlg().getBuscar().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");
 			} else {
-				buscarpalabraKMP(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText());
+				buscarpalabraKMP(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText(),true);
+				
+			}
+
+		}
+		if (e.getActionCommand() == gui.getAlg().BUSCARMA) {
+
+			if (gui.getAlg().getMostrar().getText().isEmpty() 
+					|| gui.getAlg().getBuscar().getText().isEmpty()) {
+				v.mostrarmensaje("Debes subir el archivo o poner un patron");
+			} else {
+				buscarpalabraKMP(gui.getAlg().getMostrar(), gui.getAlg().getBuscar().getText(),false);
 				
 			}
 
@@ -175,13 +199,23 @@ public class Controller implements ActionListener {
 					|| gui.getAlg2().getBuscar1().getText().isEmpty()) {
 				v.mostrarmensaje("Debes subir el archivo o poner un patron");
 			} else {
-				buscarpalabraBM(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText());
+				buscarpalabraBM(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText(),true);
 				
 			}
 
 		}
+		
 
+		if (e.getActionCommand() == gui.getAlg2().BUSCARMA2) {
+			if (gui.getAlg2().getMostrar1().getText().isEmpty() 
+					|| gui.getAlg2().getBuscar1().getText().isEmpty()) {
+				v.mostrarmensaje("Debes subir el archivo o poner un patron");
+			} else {
+				buscarpalabraBM(gui.getAlg2().getMostrar1(), gui.getAlg2().getBuscar1().getText(),false);
+				
+			}
 
+		}
 	}
 
 }
