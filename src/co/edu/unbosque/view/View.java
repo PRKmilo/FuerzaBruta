@@ -43,11 +43,13 @@ public class View extends JFrame {
 		alg2.setSize(700, 500);
 		getContentPane().add(alg2);
 		
-		alg.getBsearch().addActionListener(c);
+		alg.getBsearchkmp().addActionListener(c);
+		alg.getBsearchmkmp().addActionListener(c);
 		alg.getBvolver().addActionListener(c);
 		alg.getBsubir().addActionListener(c);
 		
-		alg2.getBsearch1().addActionListener(c);
+		alg2.getBsearchbm().addActionListener(c);
+		alg2.getBsearchmbm().addActionListener(c);
 		alg2.getBvolver1().addActionListener(c);
 		alg2.getBsubir1().addActionListener(c);
 
@@ -59,10 +61,6 @@ public class View extends JFrame {
 		alg2.updateUI();
 		alg.updateUI();
 	}
-
-
-
-	
 
 
 	public Algoritmo getAlg() {
@@ -81,17 +79,12 @@ public class View extends JFrame {
 		this.inicio = inicio;
 	}
 
-
-
 	public AlgoritmoBm getAlg2() {
 		return alg2;
 	}
 
-
-
 	public void setAlg2(AlgoritmoBm alg2) {
 		this.alg2 = alg2;
 	}
-
 
 }
