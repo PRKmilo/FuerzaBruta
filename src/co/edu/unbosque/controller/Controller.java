@@ -17,13 +17,39 @@ import co.edu.unbosque.model.Model;
 import co.edu.unbosque.view.Ventana;
 import co.edu.unbosque.view.View;
 
+/**
+ * Clase Controller que implementa ActionListener
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ *
+ */
 public class Controller implements ActionListener {
+	/**
+	 * Objeto leer de tipo LecturaArchivo
+	 */
 	private LecturaArchivo leer;
+	/**
+	 * Objeto model de tipo Model
+	 */
 	private Model model;
+	/**
+	 * Objeto gui de tipo View
+	 */
 	private View gui;
+	/**
+	 * Objeto v de tipo Ventana
+	 */
 	private Ventana v;
+	/**
+	 * Objeto buscar de tipo String
+	 */
 	private String buscar = "";
 
+	/**
+	 * Metodo constructor de la clase
+	 */
 	public Controller() {
 		gui = new View(this);
 		gui.setVisible(true);
@@ -33,6 +59,13 @@ public class Controller implements ActionListener {
 
 	}
 
+	/**
+	 * Metodo que devuelve las posiciones de acuerdo al patron encontrado dentro del
+	 * texto.
+	 * 
+	 * @param area1
+	 * @param patron
+	 */
 	public void buscarpalabraKMP(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.kmp(area1.getText(), patron);
@@ -59,6 +92,13 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	/**
+	 * Metodo que devuelve las posiciones de acuerdo al patron encontrado dentro del
+	 * texto.
+	 * 
+	 * @param area1
+	 * @param patron
+	 */
 	public void buscarpalabraBM(JTextArea area1, String patron) {
 
 		ArrayList<Integer> p2 = model.boyerMoore(area1.getText(), patron);
@@ -85,6 +125,11 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	/**
+	 * Metodo encargado de llamar la funcion de cada boton.
+	 * 
+	 * @param e
+	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(gui.getInicio().ALKMP)) {
 			gui.getAlg().setVisible(true);

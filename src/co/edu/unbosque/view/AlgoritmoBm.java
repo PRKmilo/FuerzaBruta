@@ -12,29 +12,85 @@ import javax.swing.JTextField;
 
 import co.edu.unbosque.controller.Controller;
 
+/**
+ * Clase AlgoritmoBm, contiene los elementos del JPanel para el algoritmo de BM
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ */
 public class AlgoritmoBm extends JPanel {
 
 	/**
-	 * 
+	 * Constante serialVersionUID de tipo long generada automaticamente por java.
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Objeto buscar1 de tipo JTextField
+	 */
 	private JTextField buscar1;
+	/**
+	 * Objeto mostrar1 de tipo JTextArea
+	 */
 	private JTextArea mostrar1;
+	/**
+	 * Objeto archivo1 de tipo JScrollPane
+	 */
 	private JScrollPane archivo1;
+	/**
+	 * Objeto bsearchbm de tipo JButton
+	 */
 	private JButton bsearchbm;
+	/**
+	 * Objeto bsearchmbm de tipo JButton
+	 */
 	private JButton bsearchmbm;
+	/**
+	 * Objeto bvolver1 de tipo JButton
+	 */
 	private JButton bvolver1;
+	/**
+	 * Objeto bsubir1 de tipo JButton
+	 */
 	private JButton bsubir1;
+	/**
+	 * Objeto numero1 de tipo JLabel
+	 */
 	private JLabel numero1;
+	/**
+	 * Objeto ingresarbm de tipo JLabel
+	 */
 	private JLabel ingresarbm;
 	
+
+	/**
+	 * Constante FUENTE de tipo String, la cual contiene la fuente utilizada en los
+	 * elementos del JPanel.
+	 */
 	private static final String FUENTE = "Verdana";
+	/**
+	 * Constante SUBIR2 de tipo String.
+	 */
 	public static final String SUBIR2 = "Subir BM";
+	/**
+	 * Constante VOLVER2 de tipo String.
+	 */
 	public static final String VOLVER2 = "VolverI";
+	/**
+	 * Constante BUSCAR2 de tipo String.
+	 */
 	public static final String BUSCAR2 = "Buscar BM";
+	/**
+	 * Constante BUSCARMA2 de tipo String.
+	 */
 	public static final String BUSCARMA2 = "Buscar Mayuscula BM";
 
+	/**
+	 * Metodo constructor de la clase
+	 * 
+	 * @param c
+	 */
 	public AlgoritmoBm(Controller c) {
 		setVisible(false);
 		setOpaque(false);
@@ -85,73 +141,145 @@ public class AlgoritmoBm extends JPanel {
 		add(ingresarbm);
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBsearchbm() {
 		return bsearchbm;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBsearchbm(JButton bsearchbm) {
 		this.bsearchbm = bsearchbm;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBsearchmbm() {
 		return bsearchmbm;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBsearchmbm(JButton bsearchmbm) {
 		this.bsearchmbm = bsearchmbm;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JLabel getIngresarbm() {
 		return ingresarbm;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setIngresarbm(JLabel ingresarbm) {
 		this.ingresarbm = ingresarbm;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JTextField getBuscar1() {
 		return buscar1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBuscar1(JTextField buscar1) {
 		this.buscar1 = buscar1;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JTextArea getMostrar1() {
 		return mostrar1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setMostrar1(JTextArea mostrar1) {
 		this.mostrar1 = mostrar1;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JScrollPane getArchivo1() {
 		return archivo1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setArchivo1(JScrollPane archivo1) {
 		this.archivo1 = archivo1;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBvolver1() {
 		return bvolver1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBvolver1(JButton bvolver1) {
 		this.bvolver1 = bvolver1;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBsubir1() {
 		return bsubir1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBsubir1(JButton bsubir1) {
 		this.bsubir1 = bsubir1;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JLabel getNumero1() {
 		return numero1;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setNumero1(JLabel numero1) {
 		this.numero1 = numero1;

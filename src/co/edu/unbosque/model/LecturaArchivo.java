@@ -5,8 +5,17 @@ import java.io.FileReader;
 
 import javax.swing.JFileChooser;
 
+/**
+ * Clase LecturaArchivo, utilizada para leer un archivo txt.
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ */
 public class LecturaArchivo {
-	
+	/**
+	 * Metodo para seleccionar un archivo txt y subirlo
+	 */
 	public String Leer() {
 		String texto="";
 		JFileChooser jf=new JFileChooser();

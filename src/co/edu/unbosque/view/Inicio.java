@@ -9,17 +9,55 @@ import javax.swing.JPanel;
 
 import co.edu.unbosque.controller.Controller;
 
+/**
+ * Clase Inicio, contiene los elementos del JPanel para el menu.
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ */
 public class Inicio extends JPanel {
 
+	/**
+	 * Constante serialVersionUID de tipo long generada automaticamente por java.
+	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Objeto bm de tipo JButton
+	 */
 	private JButton bm;
+	/**
+	 * Objeto kmp de tipo JButton
+	 */
 	private JButton kmp;
+	/**
+	 * Objeto titulo de tipo JLabel
+	 */
 	private JLabel titulo;
+	/**
+	 * Objeto integrantes de tipo JLabel
+	 */
 	private JLabel integrantes;
+
+	/**
+	 * Constante FUENTE de tipo String, la cual contiene la fuente utilizada en los
+	 * elementos del JPanel.
+	 */
 	public static final String FUENTE = "Verdana";
+	/**
+	 * Constante ALKMP de tipo String.
+	 */
 	public static final String ALKMP = "KMP";
+	/**
+	 * Constante ALBM de tipo String.
+	 */
 	public static final String ALBM = "Boyer-Moore";
 
+	/**
+	 * Metodo constructor de la clase
+	 * 
+	 * @param c
+	 */
 	public Inicio(Controller c) {
 		setVisible(true);
 		setOpaque(false);
@@ -50,18 +88,32 @@ public class Inicio extends JPanel {
 		add(kmp);
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBm() {
 		return bm;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBm(JButton bm) {
 		this.bm = bm;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public JButton getKmp() {
 		return kmp;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setKmp(JButton kmp) {
 		this.kmp = kmp;
 	}

@@ -3,11 +3,24 @@ package co.edu.unbosque.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Clase model, contiene la logica de los algoritmos KMP y BM.
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ */
 
 
 public class Model {
 
-
+	/**
+	 * Metodo KMP
+	 * 
+	 * @param text
+	 * @param patron
+	 * @return ArrayList de tipo Integer
+	 */
 	public ArrayList<Integer> kmp(String text, String patron) {
         ArrayList <Integer> p =new   ArrayList <Integer>();
 		int cont = 0;
@@ -55,6 +68,11 @@ public class Model {
 
 	}
 
+	/**
+	 * 
+	 * @param patron
+	 * @return HashMap con llave tipo caracter y un valor de tipo Integer.
+	 */
 	public HashMap<Character, Integer> patron(String patron) {
 
 		String p="*";
@@ -74,6 +92,13 @@ public class Model {
 	}
 
 
+	/**
+	 * Metodo BoyerMoore (BM)
+	 * 
+	 * @param text
+	 * @param patron
+	 * @return ArrayList de tipo Integer
+	 */
 	public ArrayList<Integer> boyerMoore(String text , String patron) {
 		int count =0;
 		int pos=count+(patron.length()-1);

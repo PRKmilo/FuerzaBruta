@@ -12,29 +12,85 @@ import javax.swing.JTextField;
 
 import co.edu.unbosque.controller.Controller;
 
+/**
+ * Clase Algoritmo, contiene los elementos del JPanel para el algoritmo de KMP
+ * 
+ * @author Jorge Yate
+ * @author Camilo Piza
+ * @author Nicolas Camacho
+ */
 public class Algoritmo extends JPanel {
 
 	/**
-	 * 
+	 * Constante serialVersionUID de tipo long generada automaticamente por java.
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Objeto buscar de tipo JTextField.
+	 */
 	private JTextField buscar;
+	/**
+	 * Objeto mostrar de tipo JTextArea.
+	 */
 	private JTextArea mostrar;
+	/**
+	 * Objeto archivo de tipo JScrollPane.
+	 */
 	private JScrollPane archivo;
+	/**
+	 * Objeto bsearchkmp de tipo JButton
+	 */
 	private JButton bsearchkmp;
+	/**
+	 * Objeto bsearchmkmp de tipo JButton
+	 */
 	private JButton bsearchmkmp;
+	/**
+	 * Objeto bvolver de tipo JButton
+	 */
 	private JButton bvolver;
+	/**
+	 * Objeto bsubir de tipo JButton.
+	 */
 	private JButton bsubir;
+	/**
+	 * Objeto numrep de tipo JLabel.
+	 */
 	private JLabel numrep;
+	/**
+	 * Objeto ingresarkmp de tipo JLabel.
+	 */
 	private JLabel ingresarkmp;
-	
+
+	/**
+	 * Constante FUENTE de tipo String, la cual contiene la fuente utilizada en los
+	 * elementos del JPanel.
+	 */
 	private static final String FUENTE = "Verdana";
+	/**
+	 * Constante SUBIR de tipo String.
+	 */
 	public static final String SUBIR = "Subir KMP";
+	/**
+	 * Constante VOLVER de tipo String
+	 */
 	public static final String VOLVER = "Volver";
+	/**
+	 * Constante BUSCAR1 de tipo String.
+	 */
 	public static final String BUSCAR1 = "Buscar KMP";
+
+	/**
+	 * Constante BUSCARMA de tipo String.
+	 */
 	public static final String BUSCARMA = "Buscar Mayuscula KMP";
 
+	/**
+	 * Metodo Constructor de la clase
+	 * 
+	 * @param c
+	 */
 	public Algoritmo(Controller c) {
 		setVisible(false);
 		setOpaque(false);
@@ -84,66 +140,122 @@ public class Algoritmo extends JPanel {
 		add(numrep);
 		add(ingresarkmp);
 	}
+
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBvolver() {
 		return bvolver;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBvolver(JButton bvolver) {
 		this.bvolver = bvolver;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JLabel getIngresarkmp() {
 		return ingresarkmp;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setIngresarkmp(JLabel ingresarkmp) {
 		this.ingresarkmp = ingresarkmp;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JButton getBsubir() {
 		return bsubir;
 	}
+
+	/**
+	 * Getters & Setters
+	 */
 
 	public void setBsubir(JButton bsubir) {
 		this.bsubir = bsubir;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
+
 	public JTextArea getMostrar() {
 		return mostrar;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setMostrar(JTextArea mostrar) {
 		this.mostrar = mostrar;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public JTextField getBuscar() {
 		return buscar;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setBuscar(JTextField buscar) {
 		this.buscar = buscar;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public JLabel getNumrep() {
 		return numrep;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setNumrep(JLabel numrep) {
 		this.numrep = numrep;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public JButton getBsearchkmp() {
 		return bsearchkmp;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setBsearchkmp(JButton bsearchkmp) {
 		this.bsearchkmp = bsearchkmp;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public JButton getBsearchmkmp() {
 		return bsearchmkmp;
 	}
 
+	/**
+	 * Getters & Setters
+	 */
 	public void setBsearchmkmp(JButton bsearchmkmp) {
 		this.bsearchmkmp = bsearchmkmp;
 	}
